@@ -18,10 +18,21 @@ function LoginPage({ onNavigateHome }) {
         <button
           type="button"
           onClick={onNavigateHome}
-          className="mb-6 inline-flex rounded-lg border border-sa-border bg-[#e9e4d8] p-1.5"
+          className="mb-6 inline-flex items-center gap-1.5 text-sm font-semibold text-sa-muted transition-colors hover:text-sa-blue"
         >
-          <img src={romainvilleLogo} alt="Ville de Romainville" className="h-8 w-auto" />
+          <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+            <path
+              d="M15 18l-6-6 6-6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          Retour à l&apos;accueil
         </button>
+
+        <img src={romainvilleLogo} alt="Ville de Romainville" className="mb-5 h-8 w-auto" />
 
         <h1 className="text-2xl font-extrabold text-sa-ink">Romainville</h1>
         <p className="mt-2 text-sm text-sa-muted">
@@ -72,7 +83,7 @@ function LoginPage({ onNavigateHome }) {
         </form>
       </div>
 
-      <p className="relative mt-6 text-xs font-medium text-sa-muted">
+      <p className="relative mt-6 rounded-full bg-sa-page px-3 py-1 text-xs font-medium text-sa-muted">
         Sportivement poussé par SPORT AMAT
       </p>
     </div>

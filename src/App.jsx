@@ -1,26 +1,15 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useState } from 'react'
 import LandingPage from './pages/LandingPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 
 function App() {
-  const [path, setPath] = useState(window.location.pathname)
+  const [view, setView] = useState('home')
 
-  useEffect(() => {
-    const handlePopState = () => setPath(window.location.pathname)
-    window.addEventListener('popstate', handlePopState)
-    return () => window.removeEventListener('popstate', handlePopState)
-  }, [])
-
-  const navigate = useCallback((to) => {
-    window.history.pushState({}, '', to)
-    setPath(to)
-  }, [])
-
-  if (path === '/login') {
-    return <LoginPage onNavigateHome={() => navigate('/')} />
+  if (view === 'login') {
+    return <LoginPage onNavigateHome={() => setView('home')} />
   }
 
-  return <LandingPage onNavigateLogin={() => navigate('/login')} />
+  return <LandingPage onNavigateLogin={() => setView('login')} />
 }
 
 export default App

@@ -34,9 +34,7 @@ function LandingPage({ onNavigateLogin }) {
     <div className="flex min-h-screen flex-col bg-sa-page">
       <header className="border-b border-black/5 bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <div className="inline-flex rounded-lg border border-sa-border bg-[#e9e4d8] p-1.5">
-            <img src={romainvilleLogo} alt="Ville de Romainville" className="h-9 w-auto" />
-          </div>
+          <img src={romainvilleLogo} alt="Ville de Romainville" className="h-9 w-auto" />
           <button
             type="button"
             onClick={onNavigateLogin}
