@@ -1,15 +1,14 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-sa-red: #e6323a;
-  --color-sa-gold: #ff9e01;
+  --color-sa-red: #e83039;
+  --color-sa-gold: #ff9e00;
   --color-sa-blue: #008cff;
   --color-sa-ink: #2e3a46;
   --color-sa-muted: #64768a;
   --color-sa-border: #d9e2ec;
   --color-sa-page: #f2f5fa;
-  --color-sa-button: #6d756a;
-  --font-sans: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
