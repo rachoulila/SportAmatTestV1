@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import heroPhoto from '../assets/photos/hero-volleyball.jpg'
 import romainvilleLogo from '../assets/romainville-logo.png'
 import sportAmatLogo from '../assets/sport-amat-logo.png'
 import { HeroBlobs } from '../components/BrandBlobs.jsx'
@@ -70,8 +71,8 @@ function LandingPage({ onNavigateLogin }) {
               <div className="absolute -top-4 -right-4 h-16 w-16 rounded-full bg-sa-gold" />
               <div className="absolute -bottom-5 -left-5 h-14 w-14 rounded-full bg-sa-red" />
               <PhotoTile
-                sport="Football"
-                iconClassName="h-16 w-16 sm:h-20 sm:w-20"
+                photo={heroPhoto}
+                tint={false}
                 className="relative aspect-square w-full rounded-3xl shadow-lg"
               />
             </div>

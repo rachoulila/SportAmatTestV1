@@ -1,23 +1,30 @@
-import { AthleteIcon, SPORT_ICONS } from './SportIcons.jsx'
+import basketPhoto from '../assets/photos/basket.jpg'
+import footballPhoto from '../assets/photos/football.jpg'
+import gymPhoto from '../assets/photos/gym.jpg'
+import handPhoto from '../assets/photos/hand.jpg'
 
-const TILE_BG = {
-  Football: 'bg-sa-blue',
-  Basket: 'bg-sa-gold',
-  Hand: 'bg-sa-red',
-  Gym: 'bg-sa-blue',
+const SPORT_PHOTOS = {
+  Football: footballPhoto,
+  Basket: basketPhoto,
+  Hand: handPhoto,
+  Gym: gymPhoto,
 }
 
-function PhotoTile({ sport, className = '', iconClassName = 'h-14 w-14' }) {
-  const Icon = SPORT_ICONS[sport] ?? AthleteIcon
-  const bgClass = TILE_BG[sport] ?? 'bg-sa-blue'
+const SPORT_TINTS = {
+  Football: 'bg-sa-blue/25',
+  Basket: 'bg-sa-gold/25',
+  Hand: 'bg-sa-red/25',
+  Gym: 'bg-sa-blue/25',
+}
+
+function PhotoTile({ sport, photo, tint, className = '' }) {
+  const src = photo ?? SPORT_PHOTOS[sport]
+  const tintClass = tint === false ? '' : (tint ?? SPORT_TINTS[sport] ?? 'bg-sa-blue/20')
 
   return (
-    <div className={`relative flex items-center justify-center overflow-hidden ${bgClass} ${className}`}>
-      <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full" fill="none" aria-hidden="true">
-        <path d="M-10 75Q35 105 115 35" stroke="white" strokeOpacity="0.22" strokeWidth="2.5" />
-        <path d="M-10 40Q20 15 60 30" stroke="white" strokeOpacity="0.14" strokeWidth="2" />
-      </svg>
-      <Icon className={`relative text-white/30 ${iconClassName}`} />
+    <div className={`relative overflow-hidden ${className}`}>
+      <img src={src} alt="" className="h-full w-full object-cover" />
+      {tintClass && <div className={`absolute inset-0 ${tintClass}`} />}
     </div>
   )
 }
